@@ -23,7 +23,6 @@ public class MessageFragment extends android.support.v4.app.DialogFragment {
     final ArrayList<String> messages = new ArrayList<>();
 
     private EditText mComposeMessage;
-    private String message;
 
     public MessageFragment() {
         // Required empty public constructor
@@ -68,13 +67,14 @@ public class MessageFragment extends android.support.v4.app.DialogFragment {
     }
 
     public void doPositiveClick(){
-        Intent sendIntent = new Intent();
+        Intent sendIntent = new Intent("android.intent.action.MAIN");
         sendIntent.setAction(Intent.ACTION_SEND);
-        message = mComposeMessage.getText().toString();
-        messages.add(message);
-        sendIntent.putExtra(Intent.EXTRA_TEXT, message);
+        final String message = mComposeMessage.getText().toString();
+        sendIntent.putExtra(Intent.EXTRA_TEXT, "hello");
         sendIntent.setType("text/plain");
+        sendIntent.setPackage("com.whatsapp");
         startActivity(sendIntent);
+        messages.add(message);
         Log.i(LOG_TAG, "send button clicked");
     }
 
