@@ -28,7 +28,7 @@ public class MessageFragment extends android.support.v4.app.DialogFragment {
         // Required empty public constructor
     }
 
-    public static MessageFragment newinstance(int title){
+/*    public static MessageFragment newinstance(int title){
         MessageFragment m = new MessageFragment();
 
         Bundle args = new Bundle();
@@ -36,7 +36,7 @@ public class MessageFragment extends android.support.v4.app.DialogFragment {
         args.putInt("title", title);
         m.setArguments(args);
         return m;
-    }
+    }*/
 
     @NonNull
     @Override
